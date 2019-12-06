@@ -1,4 +1,4 @@
-package epam;
+package epam.lesson_1;
 
 import static java.lang.Math.sqrt;
 
