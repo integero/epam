@@ -3,13 +3,27 @@ package epam.lesson_1;
 import static java.lang.Math.sqrt;
 
 public class Main {
+    static private class Bb{
+         Boolean cf;
+    }
+
     public static void main(String[] args) {
+/*
+        Boolean f;
+        System.out.println();
+*/
+        Bb bf=new Bb();
+        System.out.println(bf.cf);
+/*
+
         sqEq(1, -4, 3);
         sqEq(1, -4, 4);
         sqEq(5, -4, 4);
         sqEq(0, -4, 4);
         sqEq(0, 0, 4);
         sqEq(0, 0, 0);
+*/
+
     }
 
     private static void sqEq(double a, double b, double c) {
