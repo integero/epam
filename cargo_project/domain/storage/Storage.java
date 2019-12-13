@@ -1,21 +1,19 @@
 package epam.cargo_project.domain.storage;
 
 import epam.cargo_project.domain.cargo.Cargo;
-import epam.cargo_project.domain.cargo.CargoType;
 import epam.cargo_project.domain.carrier.Carrier;
-import epam.cargo_project.domain.carrier.CarrierType;
 import epam.cargo_project.domain.transportation.Transportation;
 
 import java.util.Arrays;
 
 public class Storage {
-    private static long INCREMENT=10;
+    private static int INCREMENT = 10;
     private static long cargoId = 0;
-    private static long cargoIndex = 0;
+    private static int cargoIndex = 0;
     private static long carrierId = 0;
-    private static long carrierIndex = 0;
+    private static int carrierIndex = 0;
     private static long transportId = 0;
-    private static long transportIndex = 0;
+    private static int transportIndex = 0;
     private Cargo[] cargoStore;
     private Carrier[] carrierStore;
     private Transportation[] transportationStore;
@@ -23,9 +21,10 @@ public class Storage {
     public Cargo[] getCargoStore() {
         return cargoStore;
     }
-    public Cargo getCargoById(long cargoId){
+
+    public Cargo getCargoById(long cargoId) {
         for (int i = 0; i < cargoIndex; i++) {
-            if (cargoStore[i].getId()==cargoId)
+            if (cargoStore[i].getId() == cargoId)
                 return cargoStore[i];
         }
         return null;
@@ -38,13 +37,15 @@ public class Storage {
     public Carrier[] getCarrierStore() {
         return carrierStore;
     }
-    public Carrier getCarrierById(long carrierIndex){
+
+    public Carrier getCarrierById(long carrierIndex) {
         for (int i = 0; i < carrierIndex; i++) {
-            if (carrierStore[i].getId()==cargoId)
+            if (carrierStore[i].getId() == cargoId)
                 return carrierStore[i];
         }
         return null;
     }
+
     public void setCarrierStore(Carrier[] carrierStore) {
         this.carrierStore = carrierStore;
     }
@@ -52,9 +53,10 @@ public class Storage {
     public Transportation[] getTransportationStore() {
         return transportationStore;
     }
-    public Transportation getTransportationById(long transportIndex){
+
+    public Transportation getTransportationById(long transportIndex) {
         for (int i = 0; i < transportIndex; i++) {
-            if (transportationStore[i].getId()==transportIndex)
+            if (transportationStore[i].getId() == transportIndex)
                 return transportationStore[i];
         }
         return null;
@@ -65,32 +67,35 @@ public class Storage {
     }
 
     public Storage() {
-        cargoStore = new Cargo[0];
-        carrierStore = new Carrier[0];
-        transportationStore = new Transportation[0];
+        cargoStore = new Cargo[INCREMENT];
+        carrierStore = new Carrier[INCREMENT];
+        transportationStore = new Transportation[INCREMENT];
     }
 
     public void addCarrier(Carrier carrier) {
-        carrierStore = Arrays.copyOf(carrierStore, carrierStore.length + 1);
+        if (carrierIndex == carrierStore.length) {
+            carrierStore = Arrays.copyOf(carrierStore, carrierStore.length + INCREMENT);
+        }
+        carrierStore[carrierIndex] = carrier;
+        carrierIndex++;
         carrier.setId(carrierId);
         carrierId++;
-        carrierStore[carrierStore.length - 1] = carrier;
-
     }
 
     public void printCarrier() {
         for (Carrier carrier : carrierStore) {
             System.out.println(carrier);
-
         }
-
     }
 
     public void addCargo(Cargo cargo) {
-        cargoStore = Arrays.copyOf(cargoStore, cargoStore.length + 1);
+        if (cargoIndex == cargoStore.length) {
+            cargoStore = Arrays.copyOf(cargoStore, cargoStore.length + INCREMENT);
+        }
+        cargoStore[cargoIndex] = cargo;
+        cargoIndex++;
         cargo.setId(cargoId);
         cargoId++;
-        cargoStore[cargoStore.length - 1] = cargo;
     }
 
     public void printCargo() {
@@ -101,16 +106,18 @@ public class Storage {
     }
 
     public void addTransportation(Transportation transportation) {
-        transportationStore = Arrays.copyOf(transportationStore, transportationStore.length + 1);
+        if (transportIndex == transportationStore.length) {
+            transportationStore = Arrays.copyOf(transportationStore, transportationStore.length + INCREMENT);
+        }
+        transportationStore[transportIndex] = transportation;
+        transportIndex++;
         transportation.setId(transportId);
         transportId++;
-        transportationStore[transportationStore.length - 1] = transportation;
     }
 
     public void printTransportation() {
         for (Transportation transportation : transportationStore) {
             System.out.println(transportation);
-       }
+        }
     }
-
 }
