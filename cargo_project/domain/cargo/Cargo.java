@@ -1,6 +1,8 @@
-package epam.cargo_project.cargo;
+package epam.cargo_project.domain.cargo;
 
-import epam.cargo_project.transportation.Transportation;
+import epam.cargo_project.domain.transportation.Transportation;
+
+import java.util.Arrays;
 
 public class Cargo {
     private Long id;
@@ -47,5 +49,16 @@ public class Cargo {
 
     public void setTransportations(Transportation[] transportations) {
         this.transportations = transportations;
+    }
+
+    @Override
+    public String toString() {
+        return "Cargo{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", weight=" + weight +
+                ", cargoType=" + cargoType +
+                ", transportations=" + Arrays.toString(transportations) +
+                '}';
     }
 }

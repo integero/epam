@@ -1,4 +1,4 @@
-package epam.cargo_project.carrier;
+package epam.cargo_project.domain.carrier;
 
 public enum CarrierType {
     SHIP,

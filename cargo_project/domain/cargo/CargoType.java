@@ -1,4 +1,4 @@
-package epam.cargo_project.cargo;
+package epam.cargo_project.domain.cargo;
 
 public enum CargoType {
     FOOD,
