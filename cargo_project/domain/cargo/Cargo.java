@@ -4,7 +4,7 @@ import epam.cargo_project.domain.transportation.Transportation;
 
 import java.util.Arrays;
 
-public class Cargo {
+public class Cargo implements epam.cargo_project.domain.common.Cargo {
     private Long id;
     private String name;
     private int weight;

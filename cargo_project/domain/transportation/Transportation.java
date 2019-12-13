@@ -2,10 +2,11 @@ package epam.cargo_project.domain.transportation;
 
 import epam.cargo_project.domain.cargo.Cargo;
 import epam.cargo_project.domain.carrier.Carrier;
+import epam.cargo_project.domain.common.Transportastion;
 
 import java.util.Date;
 
-public class Transportation {
+public class Transportation implements Transportastion {
     private Long id;
     private Cargo cargo;
     private Carrier carrier;

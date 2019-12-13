@@ -5,5 +5,8 @@ public class CommonObjects {
 
     public void printAll(Object object) {
         System.out.println(object);
+        if (object instanceof Cargo){
+//            ....
+        }
     }
 }

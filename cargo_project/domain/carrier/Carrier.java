@@ -1,10 +1,9 @@
 package epam.cargo_project.domain.carrier;
 
 import epam.cargo_project.domain.transportation.Transportation;
-
 import java.util.Arrays;
 
-public class Carrier {
+public class Carrier implements epam.cargo_project.domain.common.Carrier {
     private Long id;
     private String name;
     private String address;
