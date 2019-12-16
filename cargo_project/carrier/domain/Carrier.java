@@ -1,10 +1,11 @@
 package ru.epam.cargo_project.carrier.domain;
 
 
+import ru.epam.cargo_project.carrier.repo.CarrierRepo;
 import ru.epam.cargo_project.common.domain.BaseEntity;
 import ru.epam.cargo_project.transportation.domain.Transportation;
 
-public class Carrier extends BaseEntity {
+public class Carrier extends BaseEntity implements CarrierRepo {
 
   private String name;
   private String address;

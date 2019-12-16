@@ -1,5 +1,6 @@
 package ru.epam.cargo_project.cargo.domain;
 
+
 public class ClothersCargo extends Cargo {
 
   private String size;
@@ -24,6 +25,6 @@ public class ClothersCargo extends Cargo {
 
   @Override
   public CargoType getCargoType() {
-    return null;
+    return CargoType.CLOTHERS;
   }
 }

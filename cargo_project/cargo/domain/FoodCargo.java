@@ -23,4 +23,9 @@ public class FoodCargo extends Cargo {
   public void setStoreTemperature(int storeTemperature) {
     this.storeTemperature = storeTemperature;
   }
+
+  @Override
+  public CargoType getCargoType() {
+    return CargoType.FOOD;
+  }
 }

@@ -9,7 +9,7 @@ import ru.epam.cargo_project.transportation.domain.Transportation;
 
 import java.util.Arrays;
 
-public abstract class Cargo extends BaseEntity implements CargoRepo{
+public abstract class Cargo extends BaseEntity implements CargoRepo {
 
     protected String name;
     protected int weight;
@@ -35,22 +35,22 @@ public abstract class Cargo extends BaseEntity implements CargoRepo{
 
     @Override
     public String getName() {
-        return null;
+        return this.name;
     }
 
     @Override
     public void setName(String name) {
-
+        this.name = name;
     }
 
     @Override
     public int getWeight() {
-        return 0;
+        return this.weight;
     }
 
     @Override
     public void setWeight(int weight) {
-
+        this.weight = weight;
     }
 
     @Override
